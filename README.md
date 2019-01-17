@@ -1,0 +1,2 @@
+# snpDive
+Annotate snps
