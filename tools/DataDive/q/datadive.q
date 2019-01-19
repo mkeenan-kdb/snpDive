@@ -1,9 +1,9 @@
 //GLOBALS
 \c 20 140
 /project root dir
-.info.PROJ_ROOT:"/Users/Arielle/q/projects/snpdive/tools/DataDive"
+.info.PROJ_ROOT:"/Users/username/q/projects/snpdive/tools/DataDive"
 /database root directory
-.info.DB_DIR:"/Users/Arielle/q/projects/snpdive/demodb"
+.info.DB_DIR:"/Users/username/q/projects/snpdive/demodb"
 /html directory and .h.HOME location
 .h.HOME:.info.HTML_DIR:.info.PROJ_ROOT,"/html"
 .info.PORT_NUM:"50664"
