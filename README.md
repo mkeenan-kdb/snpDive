@@ -6,7 +6,7 @@
 
 Annotate 23andmedata with ensembl-vep, present resulting data in a queryable browser UI
 
-## Getting Started
+  ## Installing
  * `$ git clone https://github.com/mkeenan-kdb/snpDive.git ~/snpDive`
  * `$ cd snpDive/tools`
  * `$ git clone https://github.com/Ensembl/ensembl-vep.git`
@@ -33,6 +33,26 @@ Annotate 23andmedata with ensembl-vep, present resulting data in a queryable bro
  .info.DB_DIR:"/Users/username/snpDive/snpdb"
  ```
  
+ ## Running pipeline
+ The `snppl.q` script is what hooks into vep. If you wanted to run vep on your 23andme data, you would start kdb+q;
+ `$QHOME/m32/q ~/snpDive/snppl.q`
+ After the `snppl.q` script is loaded, we can run the pipline like;
+ ```q)runpl[`txt2vcf`vep`vep2kdb`savevep]```
+ The above command runs each of the items left to right. In this case;
+  * `txt2vcf` converts the raw 23andme text file to a vcf file using [this](https://github.com/arrogantrobot/23andme2vcf) (stored in snpDive/tools/23andme2vcf)
+  * `vep` takes the newly created vcf file and runs ensembl-vep on it
+  * `vep2kdb` takes the annotated vcf file and coverts it into a kdb+ table
+  * `savevep` takes the newly created kdb+ table (called `vepdata`) and stores it to a kdb+ database
+  
+  After running the pipeline, you can exit the snppl.q session and start a fresh one with datadive.q loaded
+  ```
+  start snppl.q from command line   :  $ q snppl.q
+  inside q, run your pipeline       :  q)runpl[`txt2vcf`vep`vep2kdb`savevep]
+  after completion, exit q          :  q)\\
+  now db can be accessed by datadive:  $ cd tools/DataDive
+  start datadive.q                  :  $ q datadive.q
+  In your browser go to http://localhost:50664/index.html to view your data 
+  ```
 QUICK START;
 * clone this repo
 * install kdb (free download [here](https://kx.com/download/))
