@@ -12,6 +12,7 @@ Annotate 23andmedata with ensembl-vep, present resulting data in a queryable bro
  * `$ git clone https://github.com/mkeenan-kdb/snpDive.git ~/snpDive`
  * `$ cd snpDive/tools`
  * `$ git clone https://github.com/Ensembl/ensembl-vep.git`
+ * `$ git clone https://github.com/arrogantrobot/23andme2vcf.git`
  * `$ cd ensembl-vep`
  * follow [instructions](https://useast.ensembl.org/info/docs/tools/vep/script/vep_download.html) to install vep
  * After ensembl-vep is installed, edit `snppl.q` so that the `PROJ_ROOT` variable points to the location of snpDive e.g. 
