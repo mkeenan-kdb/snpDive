@@ -7,12 +7,12 @@
 Annotate 23andmedata with ensembl-vep, present resulting data in a queryable browser UI
 
 ## Getting Started
- *Git clone https://github.com/mkeenan-kdb/snpDive.git ~/snpDive
- *cd snpDive/tools
- *git clone https://github.com/Ensembl/ensembl-vep.git
- *cd ensembl-vep
- *follow [instructions](https://useast.ensembl.org/info/docs/tools/vep/script/vep_download.html) to install vep
- *After ensembl-vep is installed, edit `snppl.q` so that the `PROJ_ROOT` variable points to the location of snpDive e.g. 
+ * `$ git clone https://github.com/mkeenan-kdb/snpDive.git ~/snpDive`
+ * `$ cd snpDive/tools`
+ * `$ git clone https://github.com/Ensembl/ensembl-vep.git`
+ * `$ cd ensembl-vep`
+ * follow [instructions](https://useast.ensembl.org/info/docs/tools/vep/script/vep_download.html) to install vep
+ * After ensembl-vep is installed, edit `snppl.q` so that the `PROJ_ROOT` variable points to the location of snpDive e.g. 
  ```
  /##snppl.q##
  PROJ_ROOT:"/Users/username/snpDive"
@@ -24,7 +24,7 @@ Annotate 23andmedata with ensembl-vep, present resulting data in a queryable bro
  GENOME_VCF:DATA_DIR,"/output/myVCFgenome.vcf"
  GENOME_VEP:DATA_DIR,"/output/myVEPgenome.vep.vcf"
  ```
- *Do the same in ~/snpDive/tools/DataDive/datadive.q
+ * Do the same in ~/snpDive/tools/DataDive/datadive.q
  ```
  /##datadive.q##
  /project root dir
