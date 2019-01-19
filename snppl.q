@@ -2,7 +2,7 @@
 \p 50667
 -1"\n\n\t\t\t\t\thttp://localhost:50667";
 //######################################GLOBALS#####################################//
-PROJ_ROOT:"/Users/Arielle/q/projects/snpdive"
+PROJ_ROOT:"/Users/username/q/projects/snpdive"
 DATA_DIR:PROJ_ROOT,"/data"
 DB_ROOT:PROJ_ROOT,"/demodb"
 VEP_DIR:PROJ_ROOT,"/tools/ensembl-vep"
