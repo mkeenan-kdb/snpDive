@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>kdb+ DataDive</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="img/favicon-database.ico">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,600,400italic,600italic,700' rel='stylesheet' type='text/css'>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="css/app.css" rel="stylesheet" type="text/css">
+		<link href="css/jqueryUI.css" rel="stylesheet" type="text/css">
+		<link href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+		<script src="js/jquery.js"></script>
+		<script src="js/jqueryUI.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/c.js"></script>
+		<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+		<script src="js/datadive.js"></script>
+	</head>
+	<body>
+		<i class="fa fa-spinner fa-pulse spinner" aria-hidden="true"></i>
+		<div id="header">
+			<div class="logo">
+				<a><i class="fa fa-database"></i><span>  kdb+ DataDive</span></a>
+			</div>
+		</div>
+		<div>
+			<div id="container">
+				<div class="content" id="mainCont">
+					<div class="sidebar">
+						<nav>
+							<h4 class="listTitle">Pre-filtering</h4>
+							<ul id="filters">
+								<li>
+									<select id="tables" class="form-control selections">
+										<option value="" selected disabled>Table Name</option>
+									</select>
+								</li>
+							</ul>
+							<h4 class="listTitle">Table Info</h4>
+							<ul id="selectedTab">
+								<li>Please select a table</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="mainInner" id="main-cont">
+						<div class="box cont-item" id="filterCont">
+							<div class="box-top">
+								<div id="filtering">Filter Dataset</div>
+							</div>
+							<div class="box-panel" id="filterCont">
+								<ul class="list-inline">
+									<li><button class="form-control selections" onClick="addFiltering();"><i class="fa fa-plus-circle"></i>  Add filter</button></li>
+									<li><button class="form-control selections" onClick="removeFiltering();"><i class="fa fa-minus-circle"></i>  Remove filter</button></li>
+								</ul>
+								<div id="additional-filters">
+									<ul class="list-inline" id="filtering-0">
+										<li>
+											<select class="form-control selections column-selection" id="filtering-columns">
+												<option value="" selected disabled>Column</option>
+											</select>	
+										</li>
+										<li>
+											<select class="form-control selections">
+												<option value="" selected disabled>Operation</option>
+												<option value=">">Greater Than</option>
+												<option value="<">Less Than</option>
+												<option value="=">Equals</option>
+												<option value="x*">Begins With</option>
+												<option value="*x">Ends With</option>
+												<option value="*x*">Contains</option>
+											</select>
+										</li>
+										<li>
+											<input class="form-control selections" type="text" placeholder="Type value">
+										</li>
+									</ul>
+								</div>
+								<button class="form-control selections" id="submit-btn" onClick="submitQuery();">Submit</button>
+							</div>
+						</div>
+						<div class="box cont-item">
+							<div class="box-top">
+								<div id="tinfo">Table Preview</div>
+							</div>
+							<div class="box-panel">
+								<div class="chart-cont" id="tableContainer">
+									<p>
+										Please apply some filters to your table selection.</br>
+										Note that only a subset of the data may be shown here (200 records max).</br>
+										Subsequent filters will operate against the full dataset as initially defined why the filters on the left panel - if applicable.
+									</p>
+									<table id="tableView" class="display compact cell-border"></table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- #container -->
+	</body>
+</html>
