@@ -6,6 +6,8 @@
 
 Annotate 23andmedata with ensembl-vep, present resulting data in a queryable browser UI
 
+![DataDive](https://i.imgur.com/QmTyGxn.png)
+
   ## Installing
  * `$ git clone https://github.com/mkeenan-kdb/snpDive.git ~/snpDive`
  * `$ cd snpDive/tools`
