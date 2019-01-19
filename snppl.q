@@ -2,14 +2,14 @@
 \p 50667
 -1"\n\n\t\t\t\t\thttp://localhost:50667";
 //######################################GLOBALS#####################################//
-PROJ_ROOT:"/Users/Arielle/q/projects/snppl"
+PROJ_ROOT:"/Users/Arielle/q/projects/snpdive"
 DATA_DIR:PROJ_ROOT,"/data"
-DB_ROOT:PROJ_ROOT,"/snpdb"
-VEP_DIR:PROJ_ROOT,"/tools/vep/ensembl-vep"
+DB_ROOT:PROJ_ROOT,"/demodb"
+VEP_DIR:PROJ_ROOT,"/tools/ensembl-vep"
 VCF_DIR:PROJ_ROOT,"/tools/23andme2vcf"
-GENOME_TXT:DATA_DIR,"/genome/23andmegenome.txt"
-GENOME_VCF:DATA_DIR,"/output/23andmegenome.vcf"
-GENOME_VEP:DATA_DIR,"/output/23andmegenome.vep.vcf"
+GENOME_TXT:DATA_DIR,"/genome/demo23andmegenome.txt"
+GENOME_VCF:DATA_DIR,"/output/demo23andmegenome.vcf"
+GENOME_VEP:DATA_DIR,"/output/demo23andmegenome.vep.vcf"
 VEP_OPTS:"--sift b --polyphen b --protein --uniprot --nearest symbol --numbers --domains --gene_phenotype --af --af_1kg --max_af --pubmed --variant_class --biotype --regulatory --no_stats --humdiv --force_overwrite --individual all --fork ",string .z.c
 CHIP:enlist"5"
 PARAMS:(!). flip 2 cut(
@@ -102,4 +102,12 @@ runpl:{
 
 //KICKSTART
 runpl[`txt2vcf`vep`vep2kdb`savevep`vcf2kdb`savevcf]
-/runpl[`vep2kdb]
+\
+ default run everything; q)runpl[`txt2vcf`vep`vep2kdb`savevep`vcf2kdb`savevcf]
+ runpl takes a single or list of symbols, where each symbol is each workflow item we want to run and in what order
+ e.g. runpl[`txt2vcf`vcf2kdb`savekdb] will convert the 23andme data to VCF format and save in the database
+ 
+ To go from 23andme raw file to annotated we need to convert the 23andme data to vcf, run vep on the new vcf file
+ and save the resulting data to the db, we would run
+ runpl[`txt2vcf`vep`vep2kdb`savevep]
+ /

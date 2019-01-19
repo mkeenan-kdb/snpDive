@@ -1,0 +1,273 @@
+html{
+	background-color:#d4d4d4;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Open Sans';
+}
+
+a {
+	text-decoration: none;
+}
+
+/*-------Header Start------*/
+div#header {
+	width: 100%;
+	position: fixed;
+	height: 55px;
+	background-color: #4d394b;
+	/* border-bottom: 1px solid #d4d4d4; */
+	box-shadow: 0px 0px 4px 1px #d4d4d4;
+	z-index: 1;
+}
+
+.logo{
+	float: left;
+	margin-top: 11px;
+	margin-left: 2px;
+	font-size: small;
+}
+
+.logo a {
+	font-size: 1.6em;
+	color: #fff;
+}
+
+.logo a span {
+	font-weight: 300;
+}
+/*-------Header Finish------*/
+#filterCont{
+	height:auto;
+}
+div#container {
+	width: 100%;
+	height: 100vh;
+	margin: 0 auto;
+	padding-top: 55px;
+}
+/*--------Sidebar Start-------*/
+.sidebar{
+	padding-top: 13px;
+	box-shadow: 1px 0px 5px 0px #4d394b;
+	/* float:left; */
+	position: fixed;
+	width: 20%;
+	background-color: #4d394b;
+	height: 100%;
+	}
+.listTitle {
+    margin-top: 9%;
+    border-bottom: 1px solid white;
+    font-weight: 400;
+    color: #FFF;
+    padding: 3%;
+}
+
+.selections{
+    background-color: #4d394b;
+    color: white;
+    font-weight: 700;
+}
+
+.selections:focus{
+	box-shadow:none;
+	border:1px solid #ccc;
+	box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+.selections:hover{
+	background-color:#3e2f3c;	
+}
+
+#selectedTab > li{
+	text-align:right;
+}
+
+#filters > li > select{
+	margin-bottom: -2%;
+}
+
+nav ul li{
+	padding: 0% 6% 0% 4%;
+	/* border-bottom: 1px solid white; */
+	color: white;
+	font-size: 110%;
+	font-weight: 400;
+}
+/*--------Sidebar Finish------*/
+/*------Main content Start----*/
+.spinner{
+	position: absolute;
+	z-index: 1;
+	font-size: 6em;
+	top: 50%;
+	left: 50%;
+	color: #4d394b;
+}
+
+.mainInner{
+	height: 98%;
+	width: 82%;
+	margin-left: 1%;
+	float: left;
+	overflow: visible;
+}
+
+.content div .sectionTitle{
+	clear: both;
+	line-height: 1.5em;
+	padding-left: 13px;
+	margin: 0 auto;
+	border-bottom: 2px solid #4d394b;
+	border-bottom-right-radius: 2px;
+	border-bottom-left-radius: 2px;
+}
+
+.content {
+	margin-left: 0px;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background: #d4d4d4;
+}
+
+.content p {
+	color: #424242;
+	font-size: 1em;
+}
+
+.summaryHead{
+font-weight: 700;
+}
+
+div.box {
+	margin-top: 2%;
+	height: 89%;
+	width: 96%;
+	margin-left: 24%;
+	/* margin-right: 2%; */
+	/* float: left; */
+}
+
+div.box .box-top {
+	color: #FFF;
+	background: #4d394b;
+	padding: 5px;
+	padding-left: 15px;
+	font-weight: 700;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	font-size: 1.2em;
+	transition: all 0.3 ease;
+}
+
+div.box .box-panel {
+	padding: 1% 0% 0% 1%;
+	background: #fff;
+	color: #333;
+	overflow:auto;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	box-shadow: inset 0px -1px 4px 0px #4d394b;
+}
+
+.box-top div{
+	display: inline-block;
+	width: 100%;
+	padding-left: 1%;
+}
+
+.box-top div:nth-child(2){
+    text-align: right;
+    font-size: 22px;
+}
+
+#submit-btn{
+    width: 16%;
+    margin-bottom: 1%;
+    background-color: white;
+    color: #4d394b;
+    font-weight: bolder;
+    box-shadow: inset 0px 0px 4px -1px rgb(77, 57, 75);
+ }
+
+/*table stuff*/
+#tableView > tbody > tr > td{
+	white-space: nowrap; 
+	overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 1px rgb(77, 57, 75);
+    border-radius: 41px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 62px rgb(77, 57, 75);
+}
+/*------Main content Finish----*/
+
+
+/*------Responsiveness Start-------*/
+
+@media only screen and (max-width: 480px) {
+	a.mobile {
+		display: block;
+		color: #fff;
+		background: #000;
+		text-align: center;
+		z-index: 1;
+		padding: 7px;
+		position: fixed;
+		width: 100%;
+		margin-top: 55px;
+		cursor: pointer;
+	}
+
+	a.mobile:active{
+		background: #474747;
+	}
+
+	.content {
+	   margin-left: 0;
+	   margin-top: 35px;
+	}
+	td{
+		font-size:0.8em;
+	}
+	td img{
+		width:4em;
+	}
+}
+
+
+@media only screen and (min-width: 480px) {
+	a.mobile {
+		display: none;
+	}
+}
+}
+/*------Responsiveness Finish-------*/
+
+/*element.style {
+    background-color: #4d394b;
+    color: white;
+    width: 139%;
+    padding: 0% 6% 0% 9%;
+    height: 37px;
+    text-align: left;
+    margin-left: -17%;
+    font-weight: 700;
+    margin-bottom: 8%;
+}*/
