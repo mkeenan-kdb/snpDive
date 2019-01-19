@@ -101,7 +101,8 @@ runpl:{
  }each /<----runpl is ran on each module in the pipeline successively
 
 //KICKSTART
-runpl[`txt2vcf`vep`vep2kdb`savevep`vcf2kdb`savevcf]
+/Default run everything - store `vepdata and `vcfdata to DB_ROOT
+/runpl[`txt2vcf`vep`vep2kdb`savevep`vcf2kdb`savevcf]
 \
  default run everything; q)runpl[`txt2vcf`vep`vep2kdb`savevep`vcf2kdb`savevcf]
  runpl takes a single or list of symbols, where each symbol is each workflow item we want to run and in what order
