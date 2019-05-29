@@ -9,7 +9,7 @@ Annotate 23andmedata with ensembl-vep, present resulting data in a queryable bro
 ![DataDive](https://i.imgur.com/QmTyGxn.png)
 
   ## Installing
- * Install kdb+; download [here](https://kx.com/download/), instructions [here](https://code.kx.com/q/tutorials/install/)
+ * Install kdb+; download [here](https://kx.com/download/), instructions [here](https://code.kx.com/v2/learn/install/)
  * `$ git clone https://github.com/mkeenan-kdb/snpDive.git ~/snpDive`
  * `$ cd snpDive/tools`
  * `$ git clone https://github.com/Ensembl/ensembl-vep.git`
